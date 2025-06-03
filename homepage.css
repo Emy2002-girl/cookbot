@@ -38,15 +38,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-/* .logo-icon::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    background: white;
-    border-radius: 50%;
-} */
-
 .logo-text {
     font-size: 1.25rem;
     font-weight: 600;
@@ -116,7 +107,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('freepik__upload__26279.png');
+    background-image: url('images/freepik__upload__26279.png');
     background-size: cover;
     background-position: center;
 }

@@ -15,7 +15,7 @@
         <div class="header-container">
             <!-- Logo -->
             <div class="logo">
-                <div class="logo-icon"><img src="cutlery.png" alt="" width="35" height="35"></div>
+                <div class="logo-icon"><img src="images/cutlery.png" alt="" width="35" height="35"></div>
                 <span class="logo-text"><span style="color:#10B981;">Cook</span>Bot</span>
             </div>
 
@@ -35,9 +35,9 @@
             <!-- Right side -->
             <div class="header-right">
                 <span style="border: 1px solid gainsboro; padding: 0.5rem 0.75rem; border-radius: 18px;">FR</span>
-                <span style="border: 1px solid gainsboro; padding: 0.5rem 0.75rem; border-radius: 18px;"><img src="sun.png" alt="" width="17" height="17" margin-top="5px"></span>
-                <a href="#" class="login-link" >Se connecter</a>
-                <a href="#" class="btn-primary">S'inscrire</a>
+                <span style="border: 1px solid gainsboro; padding: 0.5rem 0.75rem; border-radius: 18px;"><img src="images/sun.png" alt="" width="17" height="17" margin-top="5px"></span>
+                <a href="login.php" class="login-link" >Se connecter</a>
+                <a href="inscription.php" class="btn-primary">S'inscrire</a>
             </div>
         </div>
     </header>
@@ -67,7 +67,7 @@
     <!-- Features Section -->
     <section class="features">
         <div class="features-container">
-            <div class="feature-icon"><img src="features.png" alt=""></div>
+            <div class="feature-icon"><img src="images/features.png" alt=""></div>
             <p class="feature-label">FONCTIONNALITÉS</p>
             <h2>Plus que des recettes</h2>
             <p class="features-description">Green Bite, c'est simplement votre nouveau chef personnel.</p>
@@ -78,7 +78,7 @@
     <section class="pantry-chef">
         <div class="pantry-chef-container">
             <div class="pantry-chef-content">
-                <div class="pantry-chef-icon"><img src="Overlay.png" alt="" width="56" height="56"></div>
+                <div class="pantry-chef-icon"><img src="images/Overlay.png" alt="" width="56" height="56"></div>
                 <h3>PantryChef</h3>
                 <p>
                     Découvrez le pouvoir de cuisiner avec ce que vous avez déjà avec PantryChef ! Il suffit de saisir
@@ -93,18 +93,18 @@
                 <a href="#" class="btn-primary">Découvrir PantryChef</a>
             </div>
             <div class="pantry-chef-image">
-                <img src="8ff69d3694943e573ba0caa41b526166.jpg" alt="Fresh groceries and vegetables in shopping bag">
+                <img src="images/8ff69d3694943e573ba0caa41b526166.jpg" alt="Fresh groceries and vegetables in shopping bag">
             </div>
         </div>
     </section>
     <section class="master-chef">
         <div class="master-chef-container">
             <div class="master-chef-image">
-                <img src="istockphoto-1347785460-612x612.jpg" alt="Fresh groceries and vegetables in shopping bag" width="95%" height="25rem">
+                <img src="images/istockphoto-1347785460-612x612.jpg" alt="Fresh groceries and vegetables in shopping bag" width="95%" height="25rem">
             </div>
             <div class="master-chef-content">
                 <div class="master-chef-icon">
-                    <img src="Overlay (1).png" alt="" width="56" height="56">
+                    <img src="images/Overlay (1).png" alt="" width="56" height="56">
                 </div>
                 <h3>MasterChef</h3>
                 <p>
@@ -125,7 +125,7 @@
     <section class="pantry-chef">
         <div class="pantry-chef-container">
             <div class="pantry-chef-content">
-                <div class="pantry-chef-icon"><img src="Overlay (3).png" alt="" width="56" height="56"></div>
+                <div class="pantry-chef-icon"><img src="imagesOverlay (3).png" alt="" width="56" height="56"></div>
                 <h3>MacrosChef</h3>
                 <p>
                     MacrosChef est l'outil parfait pour toute personne cherchant à atteindre ses objectifs en matière de
@@ -140,18 +140,18 @@
                 <a href="#" class="btn-primary">Découvrir MacrosChef</a>
             </div>
             <div class="pantry-chef-image">
-                <img src="3d6f6b248c90312b6adf0889a9415aa4.jpg" alt="Fresh groceries and vegetables in shopping bag">
+                <img src="images/3d6f6b248c90312b6adf0889a9415aa4.jpg" alt="Fresh groceries and vegetables in shopping bag">
             </div>
         </div>
     </section>
     <section class="master-chef">
         <div class="master-chef-container">
             <div class="master-chef-image">
-                <img src="cae8e8eee4198a78549836a37c20d3be.jpg" alt="Fresh groceries and vegetables in shopping bag">
+                <img src="images/cae8e8eee4198a78549836a37c20d3be.jpg" alt="Fresh groceries and vegetables in shopping bag">
             </div>
             <div class="master-chef-content">
                 <div class="master-chef-icon">
-                    <img src="Overlay (2).png" alt="" width="56" height="56">
+                    <img src="images/Overlay (2).png" alt="" width="56" height="56">
                 </div>
                 <h3>MealPlanChef</h3>
                 <p>
@@ -171,7 +171,7 @@
     </section>
     <section class="features">
         <div class="features-container">
-            <div class="feature-icon"><img src="testimonials.png" alt=""></div>
+            <div class="feature-icon"><img src="images/testimonials.png" alt=""></div>
             <p class="feature-label">TÉMOIGNAGES</p>
             <h2>Ce que les gens disent de CookBot</h2>
             <p class="features-description">Écoutez directement nos clients.</p>
@@ -345,13 +345,13 @@
     </div>
         <div class="container2">
             <div class="desc2">
-            <img src="CookUp pour enfants.png" alt="" srcset="">
+            <img src="images/CookUp pour enfants.png" alt="" srcset="">
             <h2>Enfants</h2>
             <p>Recettes spéciales enfant, ce
             qu’il aime avec plein de nutrition.</p>
         </div>
         <div class="desc2">
-            <img src="CookUp pour adultes.png" alt="" srcset="">
+            <img src="images/CookUp pour adultes.png" alt="" srcset="">
             <h2>Adultes</h2>
             <p>Calculez votre besoin énergétique
             journalier sans plus attendre.</p>
@@ -360,13 +360,13 @@
     <div class="abonne">S'abonner</div>
 </div>
 <div class="container1">
-    <img src="une femme et sa fille dans la cuisine.png" alt="" srcset="" width="320px" height="auto" class="famille">
+    <img src="images/une femme et sa fille dans la cuisine.png" alt="" srcset="" width="320px" height="auto" class="famille">
 </div>
 </div>
     </section>
     <section class="features">
         <div class="features-container">
-            <div class="feature-icon"><img src="credit_card.png" alt=""></div>
+            <div class="feature-icon"><img src="images/credit_card.png" alt=""></div>
             <p class="feature-label">TARIFICATION</p>
             <h2>Des fonctionnalités incroyables à petit prix</h2>
             <p class="features-description">Savourez une cuisine délicieuse avec ChefGPT et faites partie de la communauté de plus de
@@ -436,7 +436,7 @@
         <div class="footer2">
         <div class="conta">
             <div class="logo">
-                <div class="cook"><img src="cutlery.png" alt="" width="35" height="35" >
+                <div class="cook"><img src="images/cutlery.png" alt="" width="35" height="35" >
                 <span class="logo-text" style="position: absolute;"><span style="color:#10B981;">Cook</span>Bot</span></div>
             </div>
             <div class="descrip3">Découvrez la cuisine intelligente</div>
@@ -453,11 +453,11 @@
           </div>
           <div class=" conta suiver">
             <h2>Suiver-nous</h2>
-            <img src="Frame.png" alt="">
-            <img src="Frame (1).png" alt="">
-            <img src="Frame (2).png" alt="">
+            <img src="images/Frame.png" alt="">
+            <img src="images/Frame (1).png" alt="">
+            <img src="images/Frame (2).png" alt="">
           </div>
-          <div class=" conta legal">
+          <div class="conta legal">
             <h2>Legal</h2>
             <a href="condition">Conditions</a><br>
             <a href="conf">Confidentalité</a><br>

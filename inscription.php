@@ -1,34 +1,59 @@
 <?php
-require_once 'config/database.php';
-require_once 'classes/User.php';
+// Activer l'affichage des erreurs pour le débogage
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once 'config.php';
+require_once 'user.php';
 
 $message = '';
 $message_type = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    try {
+        $database = new Database();
+        $db = $database->getConnection();
+        $utilisateur = new Utilisateur($db);
+
+        $nom = trim($_POST['nom']);
+        $prenom = trim($_POST['prenom'] ?? '');
+        $email = trim($_POST['email']);
+        $mot_de_passe = $_POST['mot_de_passe'];
+        $confirmer_mot_de_passe = $_POST['confirmer_mot_de_passe'];
+        $id_abonnement = $_POST['id_abonnement'] ?? 1;
+
+        // Vérifier que les mots de passe correspondent
+        if ($mot_de_passe !== $confirmer_mot_de_passe) {
+            $message = 'Les mots de passe ne correspondent pas';
+            $message_type = 'error';
+        } else {
+            $result = $utilisateur->inscrire($nom, $prenom, $email, $mot_de_passe, $id_abonnement);
+            $message = $result['message'];
+            $message_type = $result['success'] ? 'success' : 'error';
+            
+            if ($result['success']) {
+                header('Location: login.php?inscrit=1');
+                exit();
+            }
+        }
+    } catch (Exception $e) {
+        $message = 'Erreur: ' . $e->getMessage();
+        $message_type = 'error';
+    }
+}
+
+// Récupérer les types d'abonnements
+try {
     $database = new Database();
     $db = $database->getConnection();
-    $user = new User($db);
-
-    $username = trim($_POST['username']);
-    $email = trim($_POST['email']);
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
-
-    // Vérifier que les mots de passe correspondent
-    if ($password !== $confirm_password) {
-        $message = 'Les mots de passe ne correspondent pas';
-        $message_type = 'error';
-    } else {
-        $result = $user->register($username, $email, $password);
-        $message = $result['message'];
-        $message_type = $result['success'] ? 'success' : 'error';
-        
-        if ($result['success']) {
-            header('Location: login.php?registered=1');
-            exit();
-        }
-    }
+    $query = "SELECT * FROM ABONNEMENT WHERE STATUS = 'ACTIF' ORDER BY PRIX ASC";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $abonnements = $stmt->fetchAll();
+} catch (Exception $e) {
+    $abonnements = [];
+    $message = 'Erreur lors de la récupération des abonnements: ' . $e->getMessage();
+    $message_type = 'error';
 }
 ?>
 
@@ -37,57 +62,152 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <title>Inscription - CookBot</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 400px; margin: 50px auto; padding: 20px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
-        button { width: 100%; padding: 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background: #0056b3; }
-        .message { padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .container { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        .logo { text-align: center; margin-bottom: 30px; }
+        .logo h1 { color: #667eea; font-size: 2.5em; margin-bottom: 10px; }
+        .logo p { color: #666; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+        input[type="text"], input[type="email"], input[type="password"], select {
+            width: 100%; 
+            padding: 12px 15px; 
+            border: 2px solid #e1e5e9; 
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus { 
+            outline: none; 
+            border-color: #667eea; 
+        }
+        .form-row { display: flex; gap: 15px; }
+        .form-row .form-group { flex: 1; }
+        button { 
+            width: 100%; 
+            padding: 15px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: translateY(-2px); }
+        .message { 
+            padding: 15px; 
+            margin-bottom: 20px; 
+            border-radius: 8px; 
+            font-weight: 500;
+        }
         .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
         .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .links { text-align: center; margin-top: 15px; }
+        .links { text-align: center; margin-top: 20px; }
+        .links a { color: #667eea; text-decoration: none; font-weight: 500; }
+        .links a:hover { text-decoration: underline; }
+        .abonnement-info { 
+            background: #f8f9fa; 
+            padding: 10px; 
+            border-radius: 5px; 
+            margin-top: 5px; 
+            font-size: 14px; 
+            color: #666; 
+        }
+        @media (max-width: 576px) {
+            .form-row { flex-direction: column; gap: 0; }
+            .container { padding: 20px; }
+        }
     </style>
 </head>
 <body>
-    <h2>Inscription</h2>
-    
-    <?php if ($message): ?>
-        <div class="message <?php echo $message_type; ?>">
-            <?php echo htmlspecialchars($message); ?>
+    <div class="container">
+        <div class="logo">
+            <h1>🍳 CookBot</h1>
+            <p>Votre assistant culinaire personnel</p>
         </div>
-    <?php endif; ?>
+        
+        <?php if ($message): ?>
+            <div class="message <?php echo $message_type; ?>">
+                <?php echo htmlspecialchars($message); ?>
+            </div>
+        <?php endif; ?>
 
-    <form method="POST" action="">
-        <div class="form-group">
-            <label for="username">Nom d'utilisateur:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
+        <form method="POST" action="">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" required value="<?php echo isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" value="<?php echo isset($_POST['prenom']) ? htmlspecialchars($_POST['prenom']) : ''; ?>">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+            </div>
+            
+            <div class="form-group">
+                <label for="mot_de_passe">Mot de passe *</label>
+                <input type="password" id="mot_de_passe" name="mot_de_passe" required minlength="6">
+                <div class="abonnement-info">
+                    Le mot de passe doit contenir au moins 6 caractères
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmer_mot_de_passe">Confirmer le mot de passe *</label>
+                <input type="password" id="confirmer_mot_de_passe" name="confirmer_mot_de_passe" required minlength="6">
+            </div>
+            
+            <div class="form-group">
+                <label for="id_abonnement">Type d'abonnement</label>
+                <select id="id_abonnement" name="id_abonnement">
+                    <?php foreach ($abonnements as $abonnement): ?>
+                        <option value="<?php echo $abonnement['ID_ABONNEMENT']; ?>" 
+                                <?php echo (isset($_POST['id_abonnement']) && $_POST['id_abonnement'] == $abonnement['ID_ABONNEMENT']) ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($abonnement['TYPE_ABONNE']); ?> 
+                            <?php if ($abonnement['PRIX'] > 0): ?>
+                                - <?php echo number_format($abonnement['PRIX'], 2); ?>€
+                            <?php else: ?>
+                                - Gratuit
+                            <?php endif; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <div class="abonnement-info">
+                    L'abonnement gratuit vous permet de créer jusqu'à 10 recettes
+                </div>
+            </div>
+            
+            <button type="submit">S'inscrire</button>
+        </form>
         
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <div class="links">
+            <p>Déjà un compte ? <a href="login.php">Se connecter</a></p>
         </div>
-        
-        <div class="form-group">
-            <label for="password">Mot de passe:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="confirm_password">Confirmer le mot de passe:</label>
-            <input type="password" id="confirm_password" name="confirm_password" required>
-        </div>
-        
-        <button type="submit">S'inscrire</button>
-    </form>
-    
-    <div class="links">
-        <p>Déjà un compte ? <a href="login.php">Se connecter</a></p>
     </div>
 </body>
 </html>
