@@ -10,29 +10,53 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=task_alt" />
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
+<header class="header">
+        <nav class="nav-container">
             <!-- Logo -->
             <div class="logo">
                 <div class="logo-icon"><img src="images/cutlery.png" alt="" width="35" height="35"></div>
                 <span class="logo-text"><span style="color:#10B981;">Cook</span>Bot</span>
             </div>
-
-            <!-- Navigation -->
-            <nav class="nav">
-                <a href="#" class="nav-dropdown">
-                    Fonctionnalités
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="6,9 12,15 18,9"></polyline>
-                    </svg>
-                </a>
-                <a href="#">Tarification</a>
-                <a href="#">Blog</a>
-                <a href="#">FAQ</a>
-            </nav>
-
-            <!-- Right side -->
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Fonctionnalités
+                        <span class="dropdown-arrow"></span>
+                    </a>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu">
+                        <a href="pantrychef.php" class="dropdown-item">
+                            <div class="dropdown-icon icon-pantry">🥘</div>
+                            <span class="dropdown-text">PantryChef</span>
+                        </a>
+                        
+                        <a href="#" class="dropdown-item">
+                            <div class="dropdown-icon icon-master">👨‍🍳</div>
+                            <span class="dropdown-text">MasterChef</span>
+                        </a>
+                        
+                        <a href="#" class="dropdown-item">
+                            <div class="dropdown-icon icon-macros">🍌</div>
+                            <span class="dropdown-text">MacrosChef</span>
+                        </a>
+                        
+                        <a href="#" class="dropdown-item">
+                            <div class="dropdown-icon icon-meal">📅</div>
+                            <span class="dropdown-text">MealPlanChef</span>
+                        </a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Tarification</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+            </ul>
             <div class="header-right">
                 <span style="border: 1px solid gainsboro; padding: 0.5rem 0.75rem; border-radius: 18px;">FR</span>
                 <span style="border: 1px solid gainsboro; padding: 0.5rem 0.75rem; border-radius: 18px;"><img src="images/sun.png" alt="" width="17" height="17" margin-top="5px"></span>
@@ -40,8 +64,8 @@
                 <a href="inscription.php" class="btn-primary">S'inscrire</a>
             </div>
         </div>
+        </nav>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">

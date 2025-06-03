@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #23b585 0%, #E0E0E0 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -71,8 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             max-width: 400px;
         }
         .logo { text-align: center; margin-bottom: 30px; }
-        .logo h1 { color: #667eea; font-size: 2.5em; margin-bottom: 10px; }
-        .logo p { color: #666; }
+        .logo div {font-size: 2.5em;display: flex;margin-bottom: 10px;gap: 10px;align-items: center;justify-content: center;font-weight: 600;}
+        .logo p { color: #666;margin-left: 20px; }
         .form-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
         input[type="email"], input[type="password"] {
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         button { 
             width: 100%; 
             padding: 15px; 
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            background: linear-gradient(135deg,#10b981 0%, #20c997 100%);
             color: white; 
             border: none; 
             border-radius: 8px; 
@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="container">
         <div class="logo">
-            <h1>🍳 CookBot</h1>
+            <div><img src="images/cutlery.png" width="47px"><span style="color:#10b981">Cook</span><span style="margin-left: -11px;">Bot</span></div>
             <p>Bon retour parmi nous !</p>
         </div>
         
@@ -154,8 +154,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
         
         <div class="links">
-            <p>Pas encore de compte ? <a href="inscription.php">S'inscrire</a></p>
-            <p><a href="mot-de-passe-oublie.php">Mot de passe oublié ?</a></p>
+            <p>Pas encore de compte ? <a href="inscription.php" style="color:#10B981">S'inscrire</a></p>
+            <p><a href="mot-de-passe-oublie.php"  style="color:#10B981">Mot de passe oublié ?</a></p>
         </div>
     </div>
 </body>

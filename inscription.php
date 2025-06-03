@@ -67,7 +67,7 @@ try {
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #23b585 0%, #E0E0E0 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -83,8 +83,8 @@ try {
             max-width: 500px;
         }
         .logo { text-align: center; margin-bottom: 30px; }
-        .logo h1 { color: #667eea; font-size: 2.5em; margin-bottom: 10px; }
-        .logo p { color: #666; }
+        .logo div {font-size: 2.5em;display: flex;margin-bottom: 10px;gap: 10px;align-items: center;justify-content: center;font-weight: 600;}
+        .logo p { margin-left:10px; color: #666; }
         .form-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
         input[type="text"], input[type="email"], input[type="password"], select {
@@ -142,7 +142,8 @@ try {
 <body>
     <div class="container">
         <div class="logo">
-            <h1>🍳 CookBot</h1>
+            <div><img src="images/cutlery.png" alt="" srcset="" style="width:47px">
+            <span style="color:#10b981">Cook</span><span style="margin-left:-11px">Bot</span></div>
             <p>Votre assistant culinaire personnel</p>
         </div>
         
@@ -201,12 +202,11 @@ try {
                     L'abonnement gratuit vous permet de créer jusqu'à 10 recettes
                 </div>
             </div>
-            
-            <button type="submit">S'inscrire</button>
+            <button type="submit" style="background: linear-gradient(135deg, #10B981 0%, #98c1ae 100%);">S'inscrire</button>
         </form>
         
         <div class="links">
-            <p>Déjà un compte ? <a href="login.php">Se connecter</a></p>
+            <p>Déjà un compte ? <a href="login.php" style="color:#30bb8c">Se connecter</a></p>
         </div>
     </div>
 </body>
