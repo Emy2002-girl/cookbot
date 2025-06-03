@@ -660,14 +660,21 @@ body {
     font-size: 16px;
 }
 .footer2{
-    background-color: #F3F4F6;
     display: flex;
-    gap: 82px;
+    gap: 116px;
     padding: 20px 62px;
 }
 .conta a {
     color: black;
     text-decoration: none;
+}
+.conta h2{
+    font-weight: 600;
+    font-size: 22px;
+}
+.copyright{
+    text-align: center;
+    margin-top: -20px;
 }
 @keyframes ripple-animation {
     to {
