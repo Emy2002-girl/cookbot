@@ -11,8 +11,8 @@
         <nav class="nav-container">
             <!-- Logo -->
             <div class="logo">
-                <div class="logo-icon"><img src="images/cutlery.png" alt="" width="35" height="35"></div>
-                <span class="logo-text"><span style="color:#10B981;">Cook</span>Bot</span>
+                <a href="homepage.php"><div class="logo-icon"><img src="images/cutlery.png" alt="" width="35" height="35"></div></a>
+                <a href="homepage.php" style="text-decoration:none"><span class="logo-text"><span style="color:#10B981;">Cook</span>Bot</span></a>
             </div>
             <!-- Navigation Menu -->
             <ul class="nav-menu">
@@ -70,7 +70,7 @@
                 <img src="images/Overlay (1).png" style="width:20px,height:20px">
                 <h2>PantryChef</h2></div>
                 <p class="desc">
-                Où les Ingrédients se Transforment en<span> Chef-d'œuvre !</span>
+                Où les Ingrédients se Transforment en<span style="color:#059669"> Chef-d'œuvre !</span>
                 </p>
                 <p class="desc1">
                 Vous avez un garde-manger bien garni mais aucune inspiration pour les recettes ?
@@ -82,27 +82,30 @@
         </div>
     </section>
     <section class="content">
-        <div class="container2">
-            <div class="etapes">
-            <div class="case">1</div>
-            <h2>Ajoutez les ingrédients que vous avez à la maison.</h2>
-            <p>Vous pouvez choisir des ingrédients dans la liste ou dans votre inventaire enregistré.</p>
-            <p>N'oubliez pas : si un ingrédient n'est pas disponible dans la liste par défaut, il suffit de taper son
-            nom dans la barre de recherche et de l'ajouter.</p>
-            </div>
-            <div class="ingedients">
-                <select name="ingedient" id=""></select>
-            </div>
-        </div>
-        <div class="container2">
-        <div class="etapes">
+    <div class="contain">
+  <div class="etapes">
+    <div class="case">1</div>
+    <h2 style="padding-top: 8px;">Ajoutez les ingrédients que vous avez à la maison.</h2>
+    <p style="padding-top: 8px;">Vous pouvez choisir des ingrédients dans la liste ou dans votre inventaire enregistré.</p>
+    <p style="padding-top: 20px;">N'oubliez pas : si un ingrédient n'est pas disponible dans la liste par défaut, il suffit de taper son
+    nom dans la barre de recherche et de l'ajouter.</p>
+  </div>
+  <div class="ingredients">
+    <select name="ingredient" id="ingredient-select">
+      <option value="">Sélectionnez un ingrédient</option>
+      <option value="tomate">Tomate</option>
+      <option value="oeuf">Œuf</option>
+    </select>
+  </div>
+</div>
+        <div class="contain">
+        <div class="etapes" style="line-height:40px">
             <div class="case">2</div>
-            <h2>Ajoutez les ingrédients que vous avez à la maison.</h2>
-            <p>Vous pouvez choisir des ingrédients dans la liste ou dans votre inventaire enregistré.</p>
-            <p>N'oubliez pas : si un ingrédient n'est pas disponible dans la liste par défaut, il suffit de taper son
-            nom dans la barre de recherche et de l'ajouter.</p>
+            <h2 style="padding-top: 8px;">Sélectionnez le repas que vous souhaitez cuisiner.</h2>
+            <p>Vous pouvez choisir le petit-déjeuner, le déjeuner, le goûter ou le dîner.</p>
+            <p>PantryChef vous recommandera alors une recette adaptée au repas que vous avez choisi.</p>
             </div>
-            <div class="ingedients">
+            <div class="ingedient">
                 <select name="repas" id="">
                     <option value="pdéjeuner">petit-Déjeuner</option>
                     <option value="dejeuner">Déjeuner</option>
@@ -111,7 +114,108 @@
                 </select>
             </div>
         </div>
+        <div class="contain">
+        <!-- Section 3: Sélection des ustensiles -->
+           <div class="etapes">
+          <div class="case">3</div>
+                <h2 style="padding-top: 8px;">Sélectionnez les ustensiles de cuisine que vous avez.</h2>
+                <p style="padding-top: 8px;">Choisissez les ustensiles de cuisine que vous avez ou que vous souhaitez utiliser.</p>
+    <p style="padding-top: 20px;">Cela empêchera PantryChef de vous recommander des recettes utilisant des ustensiles que vous
+    n'avez pas ou que vous ne souhaitez pas utiliser.</p>
+        </div>
+   
+    <div class="tools-grid">
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="cooktop" name="tools" value="cooktop">
+                        Plaque de cuisson
+                    </label>
+                </div>
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="oven" name="tools" value="oven">
+                        Four
+                    </label>
+                </div>
+
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="microwave" name="tools" value="microwave">
+                        Micro-ondes
+                    </label>
+                </div>
+
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="airfryer" name="tools" value="airfryer">
+                        Friteuse à air
+                    </label>
+                </div>
+
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="sousvide" name="tools" value="sousvide">
+                        Machine sous vide
+                    </label>
+                </div>
+
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="blender" name="tools" value="blender">
+                        Mixeur
+                    </label>
+                </div>
+
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="foodprocessor" name="tools" value="foodprocessor">
+                        Robot culinaire
+                    </label>
+                </div>
+
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="bbq" name="tools" value="bbq">
+                        Barbecue
+                    </label>
+                </div>
+
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="slowcooker" name="tools" value="slowcooker">
+                        Cuiseur lent
+                    </label>
+                </div>
+
+                <div class="tool-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="pressurecooker" name="tools" value="pressurecooker">
+                        Autocuiseur
+                    </label>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="contain">
+        <!-- Section 3: Sélection des ustensiles -->
+           <div class="etapes">
+          <div class="case">5</div>
+                <h2 style="padding-top: 8px;">Sélectionnez le temps dont vous disposez.</h2>
+                <p style="padding-top: 8px;">Sélectionnez 5 minutes si vous êtes pressé ou plus de temps si vous en avez.</p>
+    <p style="padding-top: 20px;">Cela empêchera PantryChef de vous recommander des recettes qui prennent trop de temps à
+    préparer.</p>
+        </div>
+        <div class="time-selector">
+                <div class="time-display">
+                    <span id="timeValue">5</span> minutes
+                </div>
+                <div class="slider-container">
+                    <div class="slider-progress" id="sliderProgress"></div>
+                    <input type="range" id="timeSlider" min="5" max="60" value="5" step="5" class="slider">
+                </div>
+            </div>
         </div>
     </section>
+    <script src="scriptt.js"></script>
 </body>
 </html>

@@ -14,8 +14,8 @@
         <nav class="nav-container">
             <!-- Logo -->
             <div class="logo">
-                <div class="logo-icon"><img src="images/cutlery.png" alt="" width="35" height="35"></div>
-                <span class="logo-text"><span style="color:#10B981;">Cook</span>Bot</span>
+                <a href="homepage.php"><div class="logo-icon"><img src="images/cutlery.png" alt="" width="35" height="35"></div></a>
+                <a href="homepage.php" style="text-decoration:none"><span class="logo-text"><span style="color:#10B981;">Cook</span>Bot</span></a>
             </div>
             <!-- Navigation Menu -->
             <ul class="nav-menu">
