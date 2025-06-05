@@ -31,7 +31,6 @@
                             <div class="dropdown-icon icon-pantry">🥘</div>
                             <span class="dropdown-text">PantryChef</span>
                         </a>
-                        
                         <a href="#" class="dropdown-item">
                             <div class="dropdown-icon icon-master">👨‍🍳</div>
                             <span class="dropdown-text">MasterChef</span>
