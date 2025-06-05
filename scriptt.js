@@ -112,7 +112,7 @@ function resetAllSelections() {
     });
     
     // Réinitialiser le slider
-    timeSlider.value = 5;
+    timeSlider.value = 15;
     updateTimeDisplay();
     
     // Vider le tableau des outils
@@ -180,8 +180,3 @@ window.kitchenSelector = {
     saveToLocalStorage,
     loadFromLocalStorage
 };
-
-// Exemple d'utilisation des fonctions
-// console.log('Sélections actuelles:', window.kitchenSelector.getCurrentSelections());
-// window.kitchenSelector.resetAllSelections(); // Pour réinitialiser
-// window.kitchenSelector.validateSelections(); // Pour valider
