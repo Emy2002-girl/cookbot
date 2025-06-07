@@ -251,15 +251,29 @@ body {
         margin-bottom: 26px
       }
   select {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     font-size: 16px;
     border-radius: 8px;
     border: 1px solid #ccc;
     text-align: center;
+    padding: 13px 0px;
+    font-size: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background-color: white;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
   }
   #type-repas-select{
     margin-top: 5rem;
+    margin-left: 6rem;
+  }
+  .duree{
+    margin-top: 5rem;
+    margin-left: 6rem;
   }
   .case{
     width: 45px;
@@ -271,12 +285,62 @@ body {
     border-radius: 5px;
     font-weight: BOLD;
   }
+  .contain p{
+    color:#6B7280;
+    line-height: 34px;
+    font-size: 18px;
+  }
   .ingedient{
         width: 40%;
         display: flex;
         justify-content: center;
         margin-top: 100px;
   }
+  .generate-btn{
+    width: 358px;
+    height: 40px;
+    background-color: #10b981;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+  .footer{
+    background-color: #ECFDF5;
+    margin: 42px 50px;
+    padding: 20px 25px;
+    border-radius: 5px;
+}
+.titt{
+    color: #10b981;
+}
+.commencerr{
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    background-color: #10b981;
+    border-radius: 12px;
+    margin-top: 25px;
+    font-size: 16px;
+}
+.footer2{
+    display: flex;
+    gap: 116px;
+    padding: 20px 62px;
+}
+.conta a {
+    color: black;
+    text-decoration: none;
+}
+.conta h2{
+    font-weight: 600;
+    font-size: 22px;
+}
+.copyright{
+    text-align: center;
+    margin-top: -20px;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .nav-menu {

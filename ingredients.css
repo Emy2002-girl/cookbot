@@ -1,16 +1,16 @@
 /* Styles pour le niveau de cuisine avec select */
-.niveau-cuisine {
+/* .niveau-cuisine {
     flex: 1;
     min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
+} */
 
 #niveau-cuisine-select {
-    width: 100%;
-    max-width: 500px;
-    padding: 15px 20px;
+    width: 90%;
+    max-width: 315px;
+    padding: 13px 0px;
     font-size: 16px;
     border: 2px solid #e2e8f0;
     border-radius: 12px;
@@ -19,15 +19,15 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
+    margin-left: 6rem;
+    margin-top: 5rem;
 }
-
 #niveau-cuisine-select:focus {
     outline: none;
     border-color: #10b981;
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     transform: translateY(-1px);
 }
-
 #niveau-cuisine-select:hover {
     border-color: #10b981;
     box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);

@@ -90,7 +90,7 @@
                         <div class="case">1</div>
                         <h2 style="padding-top: 8px;">Ajoutez les ingrédients que vous avez à la maison.</h2>
                         <p style="padding-top: 8px;">Vous pouvez choisir des ingrédients dans la liste ou dans votre inventaire enregistré.</p>
-                        <p style="padding-top: 20px;">Les ingrédients sélectionnés apparaîtront sous forme de badges que vous pourrez facilement supprimer.</p>
+                        <p style="padding-top: 18px;">Les ingrédients sélectionnés apparaîtront sous forme de badges que vous pourrez facilement supprimer.</p>
                     </div>
                     <div class="ingredients-selector">
                         <!-- Affichage des ingrédients sélectionnés -->
@@ -166,7 +166,7 @@
                         <div class="case">2</div>
                         <h2 style="padding-top: 8px;">Sélectionnez le repas que vous souhaitez cuisiner.</h2>
                         <p style="padding-top: 8px;">Vous pouvez choisir le petit-déjeuner, le déjeuner, le goûter ou le dîner.</p>
-                        <p style="padding-top: 8px;">PantryChef vous recommandera alors une recette adaptée au repas que vous avez choisi.</p>
+                        <p style="padding-top: 18px;">PantryChef vous recommandera alors une recette adaptée au repas que vous avez choisi.</p>
                     </div>
                     <div class="type-repas">
                         <select name="type_repas" id="type-repas-select">
@@ -186,7 +186,7 @@
                         <div class="case">3</div>
                         <h2 style="padding-top: 8px;">Sélectionnez les ustensiles de cuisine que vous avez.</h2>
                         <p style="padding-top: 8px;">Choisissez les ustensiles de cuisine que vous avez ou que vous souhaitez utiliser.</p>
-                        <p>Cela empêchera PantryChef de vous recommander des recettes utilisant des ustensiles que vous
+                        <p style="padding-top:18px;line-height:27px">Cela empêchera PantryChef de vous recommander des recettes utilisant des ustensiles que vous
                         n'avez pas ou que vous ne souhaitez pas utiliser.</p>
                     </div>
                     <div class="ustensiles-checkboxes">
@@ -244,11 +244,13 @@
                 <div class="contain">
                     <div class="etapes">
                         <div class="case">4</div>
-                        <h2 style="padding-top: 8px;">Combien de temps avez-vous pour cuisiner ?</h2>
+                        <h2 style="padding-top: 8px;">Sélectionnez le temps dont vous disposez.</h2>
                         <p style="padding-top: 8px;">Sélectionnez le temps maximum que vous souhaitez consacrer à la préparation.</p>
+                        <p style="padding-top:18px">Cela empêchera PantryChef de vous recommander des recettes qui prennent trop de temps à
+                        préparer.</p>
                     </div>
                     <div class="duree">
-                        <select name="duree" id="duree-select">
+                        <select name="duree" id="duree-select" style="width:130%">
                             <option value="">-- Sélectionnez une durée --</option>
                             <option value="15">Moins de 15 minutes</option>
                             <option value="30">15 à 30 minutes</option>
@@ -267,7 +269,7 @@
                         <div class="case">5</div>
                         <h2 style="padding-top: 8px;">Sélectionnez votre niveau de compétence.</h2>
                         <p style="padding-top: 8px;">Peu importe que vous soyez un novice ou un chef étoilé au Michelin.</p>
-                        <p style="padding-top: 20px;">PantryChef vous recommandera des recettes adaptées à votre niveau de compétence.</p>
+                        <p style="padding-top: 18px;">PantryChef vous recommandera des recettes adaptées à votre niveau de compétence.</p>
                     </div>
                     <div class="niveau-cuisine">
                         <select name="niveau_cuisine" id="niveau-cuisine-select">
@@ -283,13 +285,13 @@
                          <div class="case">6</div>
                             <h2 style="padding-top: 8px;">Générez votre recette.</h2>
                             <p style="padding-top: 8px;">Appuyez sur le bouton Générer et attendez que la magie opère.</p>
-                            <p style="padding-top: 20px;">En un clic, vous pouvez enregistrer votre recette dans le livre de cuisine ou l'ajouter à la liste de
+                            <p style="padding-top: 18px;line-height:27px">En un clic, vous pouvez enregistrer votre recette dans le livre de cuisine ou l'ajouter à la liste de
                                 courses. Et si vous souhaitez commander les ingrédients en ligne, vous pouvez les ajouter à votre
                                 panier AmazonFresh ou InstaCart !</p>
                        </div>
                      <div class="generate-section">
                         <button id="generate-recipes" class="generate-btn">
-                                🍳 Générer mes recettes
+                        Générer votre recette 🧑
                         </button>
                       </div> 
                 </div>
@@ -308,7 +310,45 @@
             <div id="modal-recipe-content"></div>
         </div>
     </div>
-
+    <section class="footer">
+        <h2 class="tit">Le compagnon parfait pour votre cuisine.</h2>
+        <h2 class="titt">Inscrivez-vous gratuitement dès aujourd'hui.</h2>
+        <button class="commencerr">Commencer gratuitement</button>
+    </section>
+    <section style="background-color: #F3F4F6;">
+        <div class="footer2">
+        <div class="conta">
+            <div class="logo">
+                <div class="cook"><img src="images/cutlery.png" alt="" width="35" height="35" >
+                <span class="logo-text" style="position: absolute;"><span style="color:#10B981;">Cook</span>Bot</span></div>
+            </div>
+            <div class="descrip3">Découvrez la cuisine intelligente</div>
+        </div>
+          <div class=" conta propos">
+            <h2>à propos</h2>
+            <a href="#">Blog</a><br>
+            <a href="#">Contacte</a><br>
+          </div>
+          <div class=" conta produit">
+            <h2>Produit</h2>
+            <a href="#">Tarification</a><br>
+            <a href="#">FAQ</a><br>
+          </div>
+          <div class=" conta suiver">
+            <h2>Suiver-nous</h2>
+            <img src="images/Frame.png" alt="">
+            <img src="images/Frame (1).png" alt="">
+            <img src="images/Frame (2).png" alt="">
+          </div>
+          <div class="conta legal">
+            <h2>Legal</h2>
+            <a href="condition">Conditions</a><br>
+            <a href="conf">Confidentalité</a><br>
+          </div>
+    </div>
+    <div style=" width: 100%;height: 0.5px; background:black; margin: 30px 0;"></div>
+    <div class="copyright">© 2025 CookBot. Tous droits réservés.</div>
+    </section>
     <script src="script1.js"></script>
 </body>
 </html>
